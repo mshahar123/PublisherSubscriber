@@ -1,0 +1,95 @@
+﻿@model IEnumerable<PublisherSubscriber.Models.ContentTbl>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Admin Dashboard</h1>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ContentType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonQualification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subscribe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnSubscribe)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContentType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonQualification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subscribe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnSubscribe)
+            </td>
+          @*  <td>
+                <a asp-action="Edit" asp-route-id="@item.ContentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ContentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ContentId">Discard Request</a>
+            </td>*@
+
+            <tr>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ContentId }, new { @class = "btn btn-warning btn-large" }) 
+                    <br><br>
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.ContentId }, new { @class = "btn btn-success btn-small" })
+                    <br><br>
+                </td>
+                <td>
+                    @Html.ActionLink("Discard Request", "Delete", new { id = item.ContentId } , new { @class = "btn btn-danger btn-small" })
+                </td>
+            </tr>
+
+
+        </tr>
+}
+    </tbody>
+</table>

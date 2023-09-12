@@ -1,0 +1,74 @@
+﻿@model PublisherSubscriber.Models.ContentTbl
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="bg-success">Publish/Subscribe/Unsubscribe</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ContentId" class="control-label"></label>
+                <input asp-for="ContentId" class="form-control" />
+                <span asp-validation-for="ContentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContentType" class="control-label"></label>
+                <input asp-for="ContentType" class="form-control" />
+               @* <span asp-validation-for="ContentType" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="ContentName" class="control-label"></label>
+                <input asp-for="ContentName" class="form-control" />
+              @*  <span asp-validation-for="ContentName" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonName" class="control-label"></label>
+                <input asp-for="PersonName" class="form-control" />
+             @*   <span asp-validation-for="PersonName" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonGender" class="control-label"></label>
+                <input asp-for="PersonGender" class="form-control" />
+              @*  <span asp-validation-for="PersonGender" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonCity" class="control-label"></label>
+                <input asp-for="PersonCity" class="form-control" />
+               @* <span asp-validation-for="PersonCity" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonQualification" class="control-label"></label>
+                <input asp-for="PersonQualification" class="form-control" />
+            @*    <span asp-validation-for="PersonQualification" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="Subscribe" class="control-label"></label>
+                <input asp-for="Subscribe" class="form-control" />
+               @* <span asp-validation-for="Subscribe" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="UnSubscribe" class="control-label"></label>
+                <input asp-for="UnSubscribe" class="form-control" />
+                @*<span asp-validation-for="UnSubscribe" class="text-danger"></span>*@
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
